@@ -8,24 +8,16 @@ import com.google.maps.android.clustering.ClusterItem;
  * GoogleMapsTutorial
  */
 
-public class Person implements ClusterItem {
+public class CustomMarker implements ClusterItem {
 
     private final LatLng mPosition;
-    private String name;
-    private String twitterHandle;
+    private String title;
+    private String snippet;
 
-    public Person(double lat, double lng, String name, String twitterHandle) {
-        this.name = name;
-        this.twitterHandle = twitterHandle;
+    public CustomMarker(double lat, double lng, String title, String snippet) {
+        this.title = title;
+        this.snippet = snippet;
         mPosition = new LatLng(lat, lng);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     @Override
@@ -35,11 +27,11 @@ public class Person implements ClusterItem {
 
     @Override
     public String getTitle() {
-        return name;
+        return title;
     }
 
     @Override
     public String getSnippet() {
-        return twitterHandle;
+        return snippet;
     }
 }
